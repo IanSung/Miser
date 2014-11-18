@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="FontAwesome.ttf">
+            <string>FontAwesome</string>
+            <string>FontAwesome</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MViewController" customModule="Miser" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonArea" destination="iN0-l3-epB" id="SBF-JA-I5R"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MButtonAreaView" customModule="Miser" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="452" height="84"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIe-CG-GmM">
+                    <rect key="frame" x="20" y="20" width="196" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="zA7-KF-0Bn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="16"/>
+                    <state key="normal" title="新增账目">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDv-dh-VEK">
+                    <rect key="frame" x="236" y="20" width="196" height="44"/>
+                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="16"/>
+                    <state key="normal" title="月消费">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="GDv-dh-VEK" secondAttribute="trailing" constant="20" id="LIH-VF-5o9"/>
+                <constraint firstAttribute="bottom" secondItem="CIe-CG-GmM" secondAttribute="bottom" constant="20" id="Ola-qQ-RXh"/>
+                <constraint firstItem="GDv-dh-VEK" firstAttribute="width" secondItem="CIe-CG-GmM" secondAttribute="width" id="SU2-BO-BKh"/>
+                <constraint firstItem="CIe-CG-GmM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Wdd-md-BUd"/>
+                <constraint firstItem="GDv-dh-VEK" firstAttribute="height" secondItem="CIe-CG-GmM" secondAttribute="height" id="mt6-pN-JiU"/>
+                <constraint firstItem="GDv-dh-VEK" firstAttribute="leading" secondItem="CIe-CG-GmM" secondAttribute="trailing" constant="20" id="mtp-pU-Vgp"/>
+                <constraint firstItem="GDv-dh-VEK" firstAttribute="centerY" secondItem="CIe-CG-GmM" secondAttribute="centerY" id="tLD-ql-sYt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addButton" destination="CIe-CG-GmM" id="d02-zC-P3S"/>
+                <outlet property="checkButton" destination="GDv-dh-VEK" id="rXa-B1-Qnq"/>
+            </connections>
+            <point key="canvasLocation" x="191" y="171"/>
+        </view>
+    </objects>
+</document>
