@@ -6,11 +6,19 @@
 //  Copyright (c) 2014 maquan. All rights reserved.
 //
 
+//  cell视图类
+/*
+    所有视图样式一致，初始化时，初始共有信息
+*/
+//  cell 5(gap) + 20(tipImage) + 5(gap) + ...(title) + 5(gap)
+
 import UIKit
 
 class MTipCell: UICollectionViewCell {
     
     var titleLabel: UILabel?
+    var tipImageView: UIImageView?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.layer.borderWidth = 1;
@@ -23,12 +31,19 @@ class MTipCell: UICollectionViewCell {
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    //  对外提供接口，拿到MTipCellData数据，进行cell内容的设置
     func configureCell(cellData: MTipCellData!)
     {
+        var tipImage = UIImage(named: "LaunchForXib.png")
+        tipImageView = UIImageView(image: tipImage)
+        tipImageView!.frame = CGRectMake(5, 0, 20, self.frame.size.height)
+        self.contentView.addSubview(tipImageView!)
+        
         self.layer.cornerRadius = 8
-        titleLabel = UILabel(frame: CGRectMake(0, 0, self.frame.size.width, self.frame.size.height))
+        titleLabel = UILabel(frame: CGRectMake(30, 0, self.frame.size.width, self.frame.size.height))
         titleLabel?.font = UIFont.systemFontOfSize(16.0)
-        titleLabel?.textAlignment = NSTextAlignment.Center
+        titleLabel?.textAlignment = NSTextAlignment.Left
         titleLabel?.text = cellData.title
         self.contentView.addSubview(titleLabel!)
     }

@@ -12,6 +12,15 @@ class MViewController: UIViewController
 {
     @IBOutlet var buttonArea: MButtonAreaView!
     var tipsCollectionObj: MTipsCollectionObject!
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        SYAppStart.show()
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        SYAppStart.hide(true)
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()

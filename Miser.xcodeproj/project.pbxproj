@@ -17,11 +17,14 @@
 		D45DCA881A184B4B00637093 /* MTipsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45DCA871A184B4B00637093 /* MTipsCollectionViewLayout.swift */; };
 		D45DCA8A1A18551200637093 /* MTipCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45DCA891A18551200637093 /* MTipCellData.swift */; };
 		D45DCA8E1A1855B400637093 /* MTipsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45DCA8D1A1855B400637093 /* MTipsDataSource.swift */; };
+		D46248051A1AEB0B00BF395D /* SYAppStart.m in Sources */ = {isa = PBXBuildFile; fileRef = D46248041A1AEB0B00BF395D /* SYAppStart.m */; };
+		D46248081A1AEDDF00BF395D /* MiserLaunchImage-480h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D46248061A1AEDDF00BF395D /* MiserLaunchImage-480h@2x.png */; };
+		D46248091A1AEDDF00BF395D /* MiserLaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D46248071A1AEDDF00BF395D /* MiserLaunchImage-568h@2x.png */; };
 		D46A1F581A0F94AA00668008 /* MDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46A1F571A0F94AA00668008 /* MDelegate.swift */; };
 		D46A1F5A1A0F94AA00668008 /* MViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46A1F591A0F94AA00668008 /* MViewController.swift */; };
 		D46A1F5F1A0F94AA00668008 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D46A1F5E1A0F94AA00668008 /* Images.xcassets */; };
 		D46A1F621A0F94AA00668008 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46A1F601A0F94AA00668008 /* LaunchScreen.xib */; };
-		D46A1F781A0F979300668008 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = D46A1F771A0F979300668008 /* launch.png */; };
+		D46A1F781A0F979300668008 /* LaunchForXib.png in Resources */ = {isa = PBXBuildFile; fileRef = D46A1F771A0F979300668008 /* LaunchForXib.png */; };
 		D46B75311A1749D3008AAD2D /* MButtonAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B752F1A1749D3008AAD2D /* MButtonAreaView.swift */; };
 		D46B75321A1749D3008AAD2D /* MButtonAreaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46B75301A1749D3008AAD2D /* MButtonAreaView.xib */; };
 /* End PBXBuildFile section */
@@ -40,13 +43,17 @@
 		D45DCA871A184B4B00637093 /* MTipsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTipsCollectionViewLayout.swift; sourceTree = "<group>"; };
 		D45DCA891A18551200637093 /* MTipCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTipCellData.swift; sourceTree = "<group>"; };
 		D45DCA8D1A1855B400637093 /* MTipsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTipsDataSource.swift; sourceTree = "<group>"; };
+		D46248031A1AEB0B00BF395D /* SYAppStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAppStart.h; sourceTree = "<group>"; };
+		D46248041A1AEB0B00BF395D /* SYAppStart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAppStart.m; sourceTree = "<group>"; };
+		D46248061A1AEDDF00BF395D /* MiserLaunchImage-480h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MiserLaunchImage-480h@2x.png"; path = "Images.xcassets/LaunchImage.launchimage/MiserLaunchImage-480h@2x.png"; sourceTree = "<group>"; };
+		D46248071A1AEDDF00BF395D /* MiserLaunchImage-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MiserLaunchImage-568h@2x.png"; path = "Images.xcassets/LaunchImage.launchimage/MiserLaunchImage-568h@2x.png"; sourceTree = "<group>"; };
 		D46A1F521A0F94AA00668008 /* Miser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Miser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46A1F561A0F94AA00668008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D46A1F571A0F94AA00668008 /* MDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDelegate.swift; sourceTree = "<group>"; };
 		D46A1F591A0F94AA00668008 /* MViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MViewController.swift; sourceTree = "<group>"; };
 		D46A1F5E1A0F94AA00668008 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D46A1F611A0F94AA00668008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D46A1F771A0F979300668008 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
+		D46A1F771A0F979300668008 /* LaunchForXib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchForXib.png; sourceTree = "<group>"; };
 		D46B752F1A1749D3008AAD2D /* MButtonAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MButtonAreaView.swift; sourceTree = "<group>"; };
 		D46B75301A1749D3008AAD2D /* MButtonAreaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MButtonAreaView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +90,15 @@
 			path = TipsViewModel;
 			sourceTree = "<group>";
 		};
+		D46248021A1AEB0100BF395D /* SYAppStart */ = {
+			isa = PBXGroup;
+			children = (
+				D46248031A1AEB0B00BF395D /* SYAppStart.h */,
+				D46248041A1AEB0B00BF395D /* SYAppStart.m */,
+			);
+			path = SYAppStart;
+			sourceTree = "<group>";
+		};
 		D46A1F491A0F94AA00668008 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +123,7 @@
 				D423E06D1A15AEEB0048F71F /* Main.storyboard */,
 				D46B752D1A1749D3008AAD2D /* BaseModule */,
 				D423E0961A162CEF0048F71F /* MButton */,
+				D46248021A1AEB0100BF395D /* SYAppStart */,
 				D46A1F551A0F94AA00668008 /* Supporting Files */,
 				D423E0701A161B8B0048F71F /* Miser-Bridging-Header.h */,
 			);
@@ -116,8 +133,10 @@
 		D46A1F551A0F94AA00668008 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D46A1F771A0F979300668008 /* launch.png */,
+				D46248061A1AEDDF00BF395D /* MiserLaunchImage-480h@2x.png */,
+				D46248071A1AEDDF00BF395D /* MiserLaunchImage-568h@2x.png */,
 				D46A1F601A0F94AA00668008 /* LaunchScreen.xib */,
+				D46A1F771A0F979300668008 /* LaunchForXib.png */,
 				D46A1F5E1A0F94AA00668008 /* Images.xcassets */,
 				D46A1F561A0F94AA00668008 /* Info.plist */,
 			);
@@ -211,11 +230,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D46A1F781A0F979300668008 /* launch.png in Resources */,
+				D46A1F781A0F979300668008 /* LaunchForXib.png in Resources */,
 				D423E09C1A162D530048F71F /* FontAwesome.ttf in Resources */,
 				D46A1F621A0F94AA00668008 /* LaunchScreen.xib in Resources */,
 				D46A1F5F1A0F94AA00668008 /* Images.xcassets in Resources */,
+				D46248081A1AEDDF00BF395D /* MiserLaunchImage-480h@2x.png in Resources */,
 				D423E06E1A15AEEB0048F71F /* Main.storyboard in Resources */,
+				D46248091A1AEDDF00BF395D /* MiserLaunchImage-568h@2x.png in Resources */,
 				D46B75321A1749D3008AAD2D /* MButtonAreaView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +250,7 @@
 			files = (
 				D45DCA881A184B4B00637093 /* MTipsCollectionViewLayout.swift in Sources */,
 				D45DCA8E1A1855B400637093 /* MTipsDataSource.swift in Sources */,
+				D46248051A1AEB0B00BF395D /* SYAppStart.m in Sources */,
 				D45DCA841A1849E900637093 /* MTipsCollectionObject.swift in Sources */,
 				D46A1F5A1A0F94AA00668008 /* MViewController.swift in Sources */,
 				D45DCA8A1A18551200637093 /* MTipCellData.swift in Sources */,

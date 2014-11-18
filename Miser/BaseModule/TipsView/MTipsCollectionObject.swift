@@ -12,7 +12,8 @@ let tipIdentifier:String = "TIP_CELL"
 
 class MTipsCollectionObject: NSObject, UICollectionViewDelegate
 {
-    var tipDataArray: MTipsDataSource!
+    //数据源，数据的入口，view 和 layOut都从这里拿数据，这里提供接口代理
+    var tipsObjDataSource: MTipsDataSource!
     var collectionView: MTipsCollectionView!
     var collectionViewLayout: MTipsCollectionViewLayout!
     
@@ -33,12 +34,12 @@ class MTipsCollectionObject: NSObject, UICollectionViewDelegate
             }
         }
         
-        tipDataArray = MTipsDataSource(itemCount: 20, configureBlock: configureCell)
-        tipDataArray.createDataArray()
+        tipsObjDataSource = MTipsDataSource(itemCount: 20, configureBlock: configureCell)
+        tipsObjDataSource.createDataArray()
         collectionViewLayout = MTipsCollectionViewLayout()
-        collectionViewLayout.tipsCVDelegate = tipDataArray
+        collectionViewLayout.dataSource = tipsObjDataSource
         collectionView = MTipsCollectionView(frame: CGRectZero, collectionViewLayout: collectionViewLayout)
-        collectionView.dataSource = tipDataArray
+        collectionView.dataSource = tipsObjDataSource
         collectionView.registerClass(MTipCell.self, forCellWithReuseIdentifier: tipIdentifier)
     }
     
@@ -51,13 +52,12 @@ class MTipsCollectionObject: NSObject, UICollectionViewDelegate
     }
     
     func moveCellTo(#fromCell: Int, toCell: Int){
-        var temp = tipDataArray.dataTitle[fromCell]
-        tipDataArray.dataTitle.removeAtIndex(fromCell)
-        tipDataArray.dataTitle.insert(temp, atIndex: toCell)
-        tipDataArray.createDataArray()
+        var temp = tipsObjDataSource.dataTitle[fromCell]
+        tipsObjDataSource.dataTitle.removeAtIndex(fromCell)
+        tipsObjDataSource.dataTitle.insert(temp, atIndex: toCell)
+        tipsObjDataSource.createDataArray()
         collectionView.moveItemAtIndexPath(NSIndexPath(forItem: fromCell, inSection: 0), toIndexPath: NSIndexPath(forItem: toCell, inSection: 0))
         collectionView.reloadData()
-
     }
 }
 

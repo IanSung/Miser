@@ -12,8 +12,8 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch.png" translatesAutoresizingMaskIntoConstraints="NO" id="wm4-PG-eh9">
-                    <rect key="frame" x="182" y="96.5" width="115" height="150"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchForXib.png" translatesAutoresizingMaskIntoConstraints="NO" id="wm4-PG-eh9">
+                    <rect key="frame" x="182" y="97" width="115" height="150"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -27,6 +27,6 @@
         </view>
     </objects>
     <resources>
-        <image name="launch.png" width="115" height="150"/>
+        <image name="LaunchForXib.png" width="115" height="150"/>
     </resources>
 </document>

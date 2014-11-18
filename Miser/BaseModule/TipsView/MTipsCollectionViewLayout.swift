@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol TipsCVLayoutDelegate{
-    func getCellBaseData(#index: Int) -> CellDataProtocol?
+protocol TipsCVLayoutDataSource{
+    func getCellBaseData(#index: Int) -> CellLayoutDataProtocol?
 }
 
 class MTipsCollectionViewLayout: UICollectionViewLayout {
     
     var cellCount: Int!
-    var tipsCVDelegate: TipsCVLayoutDelegate!
+    var dataSource: TipsCVLayoutDataSource!
     
     override func prepareLayout()
     {
@@ -41,7 +41,7 @@ class MTipsCollectionViewLayout: UICollectionViewLayout {
         var attribute = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
         
         //在这里设置单个attribute的数据
-        var cellData = self.tipsCVDelegate.getCellBaseData(index: indexPath.item)
+        var cellData = self.dataSource.getCellBaseData(index: indexPath.item)
         attribute.frame = cellData!.frame
         
         return attribute
