@@ -22,6 +22,8 @@ import UIKit
 */
 class MTipCellData: NSObject, CellLayoutDataProtocol {
     
+    var index: Int!
+    
     var title: String!
     
     var position: CGRect = CGRectZero

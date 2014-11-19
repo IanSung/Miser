@@ -15,9 +15,10 @@
 import UIKit
 
 class MTipCell: UICollectionViewCell {
-    
+
     var titleLabel: UILabel?
     var tipImageView: UIImageView?
+    var data: MTipCellData?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +27,7 @@ class MTipCell: UICollectionViewCell {
         var y:CGFloat = CGFloat(arc4random()) % 255 / 255
         var z:CGFloat = CGFloat(arc4random()) % 255 / 255
         self.backgroundColor = UIColor(red: x, green: y, blue: z, alpha: 1)
+        data = MTipCellData()
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -35,6 +37,7 @@ class MTipCell: UICollectionViewCell {
     //  对外提供接口，拿到MTipCellData数据，进行cell内容的设置
     func configureCell(cellData: MTipCellData!)
     {
+        data = cellData
         var tipImage = UIImage(named: "LaunchForXib.png")
         tipImageView = UIImageView(image: tipImage)
         tipImageView!.frame = CGRectMake(5, 0, 20, self.frame.size.height)

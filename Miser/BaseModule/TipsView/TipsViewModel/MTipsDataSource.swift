@@ -29,7 +29,7 @@ class MTipsDataSource: NSObject, UICollectionViewDataSource, TipsCVLayoutDataSou
         self.configureBlock = configureBlock
         
         //假数据
-        dataTitle = ["1", "22", "333", "4444", "55555","666666", "7777777", "8888888", "wwww","s", "sfdsafsdf", "ggg", "xi", "xiao", "er", "wwww","s", "232", "ggg","safdsfsdafsdaf"];
+        dataTitle = ["1", "22", "333", "4444", "55555","666666", "7777777", "8888888"];
     }
     
     //创建数据的过程。
@@ -54,13 +54,13 @@ class MTipsDataSource: NSObject, UICollectionViewDataSource, TipsCVLayoutDataSou
             }
         
             var currentData: MTipCellData = MTipCellData()
-            
+            currentData.index = index
             //计算文字长度
             var title:NSString = dataTitle[index]
             var size: CGSize = title.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(16.0)])
             size = CGSizeMake(size.width + currentData.baseWidth, size.height)//size从文字的长度，转成cell的长度
             var currentCellWidth = size.width + cellGap * 2
-            if  currentCellWidth + lastCellMaxX < 280
+            if  (currentCellWidth + lastCellMaxX) < 280
             {
                 if let temp = lastTipData?
                 {

@@ -24,7 +24,7 @@ static UIWindow *startImageWindow = nil;
         startImageWindow.windowLevel = UIWindowLevelStatusBar + 1; //必须加1
         startImageWindow.rootViewController = [[SYAppStartViewController alloc] init];
     }
-
+    
     [startImageWindow setHidden:NO];
 }
 + (void)hide:(BOOL)animated
