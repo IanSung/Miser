@@ -10,8 +10,7 @@ import UIKit
 
 let tipIdentifier:String = "TIP_CELL"
 
-class MTipsCollectionObject: NSObject, UICollectionViewDelegate, MTipsCollectionViewGestureDelegate
-{
+class MTipsCollectionObject: NSObject, UICollectionViewDelegate, MTipsCollectionViewGestureDelegate {
     //数据源，数据的入口，view 和 layOut都从这里拿数据，这里提供接口代理
     var tipsObjDataSource: MTipsDataSource!
     var collectionView: MTipsCollectionView!
@@ -19,21 +18,18 @@ class MTipsCollectionObject: NSObject, UICollectionViewDelegate, MTipsCollection
     var tempMoveCell: MTipCell?
     var pressMoveCell: MTipCell?
     var moveFromIndex: NSInteger = -1
-//    var moveToIndex: NSInteger = -1
     var pressMoveCellOffset: CGPoint = CGPointZero
     
-    func showInView(#view: UIView){
+    func showInView(#view: UIView) {
         collectionView.frame = CGRectMake(20, 40, view.frame.size.width - 40, 132)
         view.addSubview(collectionView)
     }
     
-    override init()
-    {
+    override init() {
         super.init()
         func configureCell(cell: AnyObject, cellData: AnyObject) -> Void{
             if let mCell = cell as? MTipCell{
-                if let mCellData = cellData as? MTipCellData
-                {
+                if let mCellData = cellData as? MTipCellData{
                     mCell.configureCell(mCellData)
                 }
             }
@@ -49,21 +45,20 @@ class MTipsCollectionObject: NSObject, UICollectionViewDelegate, MTipsCollection
         collectionView.registerClass(MTipCell.self, forCellWithReuseIdentifier: tipIdentifier)
     }
     
-    func addCell(){
+    func addCell() {
     
     }
     
-    func deleteCell(#index: Int){
+    func deleteCell(#index: Int) {
         
     }
     
-    func moveCellTo(#fromCell: Int, toCell: Int){
+    func moveCellTo(#fromCell: Int, toCell: Int) {
         var temp = tipsObjDataSource.dataTitle[fromCell]
         tipsObjDataSource.dataTitle.removeAtIndex(fromCell)
         tipsObjDataSource.dataTitle.insert(temp, atIndex: toCell)
         println("------------------")
-        for title in tipsObjDataSource.dataTitle
-        {
+        for title in tipsObjDataSource.dataTitle {
             
             println(title)
         }
@@ -98,10 +93,8 @@ class MTipsCollectionObject: NSObject, UICollectionViewDelegate, MTipsCollection
         //  长按开始
         if longPressGesture.state == UIGestureRecognizerState.Began{
             tipsObjDataSource.dataArray?.enumerateObjectsUsingBlock({object, index, stop in
-                if let cellData = object as? MTipCellData
-                {
-                    if CGRectContainsPoint(cellData.position, position)
-                    {
+                if let cellData = object as? MTipCellData {
+                    if CGRectContainsPoint(cellData.position, position) {
                         //点击cell事件
 //                        println("\(cellData.title)")
                         self.tempMoveCell = MTipCell(frame: cellData.position)
@@ -131,17 +124,32 @@ class MTipsCollectionObject: NSObject, UICollectionViewDelegate, MTipsCollection
         if longPressGesture.state == UIGestureRecognizerState.Changed{
             self.tempMoveCell?.center = CGPointMake(position.x - self.pressMoveCellOffset.x, position.y - self.pressMoveCellOffset.y)
             tipsObjDataSource.dataArray?.enumerateObjectsUsingBlock({object, index, stop in
-                if let cellData = object as? MTipCellData
-                {
-                    if CGRectContainsPoint(cellData.position, position)
-                    {
-                        if cellData.index != self.moveFromIndex
-                        {
-                            println("移动 \(self.moveFromIndex) 到 \(cellData.index)")
+                if let cellData = object as? MTipCellData {
+                    if self.moveFromIndex > cellData.index {
+                        var frontHalfRect = CGRectMake(CGRectGetMinX(cellData.position), CGRectGetMinY(cellData.position), CGRectGetWidth(cellData.position) / 2, CGRectGetHeight(cellData.position))
+                        // 如果进入前一半
+                        if CGRectContainsPoint(frontHalfRect, position) {
                             self.moveCellTo(fromCell: self.moveFromIndex, toCell: cellData.index)
                             self.moveFromIndex = cellData.index
                         }
                     }
+                    
+                    if self.moveFromIndex < cellData.index {
+                        var backHalfRect = CGRectMake(CGRectGetMidX(cellData.position), CGRectGetMinY(cellData.position), CGRectGetWidth(cellData.position) / 2, CGRectGetHeight(cellData.position))
+                        // 如果进入后一半
+                        if CGRectContainsPoint(backHalfRect, position) {
+                            self.moveCellTo(fromCell: self.moveFromIndex, toCell: cellData.index)
+                            self.moveFromIndex = cellData.index
+                        }
+                    }
+                    
+//                    if CGRectContainsPoint(cellData.position, position) {
+//                        if cellData.index != self.moveFromIndex {
+//                            println("移动 \(self.moveFromIndex) 到 \(cellData.index)")
+//                            self.moveCellTo(fromCell: self.moveFromIndex, toCell: cellData.index)
+//                            self.moveFromIndex = cellData.index
+//                        }
+//                    }
                 }
             })
             
@@ -149,8 +157,7 @@ class MTipsCollectionObject: NSObject, UICollectionViewDelegate, MTipsCollection
         
         if longPressGesture.state == UIGestureRecognizerState.Ended
         || longPressGesture.state == UIGestureRecognizerState.Cancelled
-        || longPressGesture.state == UIGestureRecognizerState.Failed
-        {
+        || longPressGesture.state == UIGestureRecognizerState.Failed {
             self.tempMoveCell?.removeFromSuperview()
             self.tempMoveCell = nil
             //隐藏点击的cell

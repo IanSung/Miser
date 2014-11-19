@@ -17,27 +17,22 @@ class MTipsCollectionViewLayout: UICollectionViewLayout {
     var cellCount: Int!
     var dataSource: TipsCVLayoutDataSource!
     
-    override func prepareLayout()
-    {
+    override func prepareLayout() {
         super.prepareLayout()
         cellCount = self.collectionView?.numberOfItemsInSection(0)
     }
-    override func collectionViewContentSize() -> CGSize
-    {
+    override func collectionViewContentSize() -> CGSize {
         return self.collectionView!.frame.size
     }
-    override func layoutAttributesForElementsInRect(rect: CGRect) -> [AnyObject]?
-    {
+    override func layoutAttributesForElementsInRect(rect: CGRect) -> [AnyObject]? {
         var attributes = NSMutableArray()
-        for(var i = 0; i < cellCount; i++)
-        {
+        for(var i = 0; i < cellCount; i++) {
             var indexPath = NSIndexPath(forItem: i, inSection: 0)
             attributes.addObject(self.layoutAttributesForItemAtIndexPath(indexPath))
         }
         return attributes
     }
-    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes!
-    {
+    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes! {
         var attribute = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
         
         //在这里设置单个attribute的数据

@@ -30,11 +30,11 @@ class MTipsCollectionView: UICollectionView {
         self.addGestureRecognizer(tapGesture!)
     }
 
-    func longPress(gesture: UILongPressGestureRecognizer) -> Void{
+    func longPress(gesture: UILongPressGestureRecognizer) -> Void {
         gestureDelegate?.longPress(gesture)
     }
     
-    func tap(gesture: UITapGestureRecognizer) -> Void{
+    func tap(gesture: UITapGestureRecognizer) -> Void {
         gestureDelegate?.tap(gesture)
     }
     
