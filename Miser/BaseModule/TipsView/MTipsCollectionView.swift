@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MTipsCollectionViewGestureDelegate{
+protocol MTipsCollectionViewGestureDelegate {
     func longPress(longPressGesture: UILongPressGestureRecognizer) -> Void
     func tap(tapGesture: UITapGestureRecognizer) -> Void
 }

@@ -16,38 +16,47 @@ import UIKit
 
 class MTipCell: UICollectionViewCell {
 
-    var titleLabel: UILabel?
-    var tipImageView: UIImageView?
+    @IBOutlet weak var tipImageView: UIImageView!
+    
+    @IBOutlet weak var bgView: UIView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
     var data: MTipCellData?
     
+    //  cell代码初始化
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.layer.borderWidth = 1;
-        var x:CGFloat = CGFloat(arc4random()) % 255 / 255
-        var y:CGFloat = CGFloat(arc4random()) % 255 / 255
-        var z:CGFloat = CGFloat(arc4random()) % 255 / 255
-        self.backgroundColor = UIColor(red: x, green: y, blue: z, alpha: 1)
+        self.layer.borderWidth = 0
+        self.backgroundColor = UIColor.clearColor()
         data = MTipCellData()
     }
 
+    //  cell xib 初始化
     required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        //xib加载会走这里
+//        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        self.layer.borderWidth = 0
+        self.backgroundColor = UIColor.clearColor()
+        data = MTipCellData()
+
     }
     
     //  对外提供接口，拿到MTipCellData数据，进行cell内容的设置
     func configureCell(cellData: MTipCellData!)
     {
         data = cellData
-        var tipImage = UIImage(named: "LaunchForXib.png")
-        tipImageView = UIImageView(image: tipImage)
-        tipImageView!.frame = CGRectMake(5, 0, 20, self.frame.size.height)
-        self.contentView.addSubview(tipImageView!)
+        bgView?.layer.borderWidth = 1
+        bgView?.layer.cornerRadius = 8
+        var x:CGFloat = CGFloat(arc4random()) % 255 / 255
+        var y:CGFloat = CGFloat(arc4random()) % 255 / 255
+        var z:CGFloat = CGFloat(arc4random()) % 255 / 255
+        bgView?.backgroundColor = UIColor(red: x, green: y, blue: z, alpha: 1)
         
-        self.layer.cornerRadius = 8
-        titleLabel = UILabel(frame: CGRectMake(30, 0, self.frame.size.width, self.frame.size.height))
-        titleLabel?.font = UIFont.systemFontOfSize(16.0)
-        titleLabel?.textAlignment = NSTextAlignment.Left
+        var tipImage = UIImage(named: "LaunchForXib.png")
+        tipImageView.image = tipImage
+        
         titleLabel?.text = cellData.title
-        self.contentView.addSubview(titleLabel!)
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MViewController: UIViewController
+class MViewController: UIViewController, MButtonAreaViewDelegate
 {
     @IBOutlet var buttonArea: MButtonAreaView!
     var tipsCollectionObj: MTipsCollectionObject!
@@ -50,7 +50,17 @@ class MViewController: UIViewController
         NSBundle.mainBundle().loadNibNamed("MButtonAreaView", owner: self, options: nil)[0]
         buttonArea.frame = CGRectMake(0, view.frame.size.height - 84, view.frame.size.width, 84)
         buttonArea.baseConfigure()
+        buttonArea.delegate = self
         self.view.addSubview(buttonArea)
+    }
+    
+    //按键区代理
+    func addTip(sender: UIButton) {
+        tipsCollectionObj.addCell()
+    }
+    
+    func deleteTip(sender: UIButton) {
+        tipsCollectionObj.deleteCell(index: 0)
     }
     
     override func didReceiveMemoryWarning()

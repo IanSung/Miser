@@ -8,28 +8,31 @@
 
 //  这里是数据进入的地方。 向外提供接口，查找数据。
 /*
-    ** dataSource 不负责设置东西，只负责从数据中提取所需要的部分，供外面使用。**
+    * dataSource 不负责设置东西，只负责从数据中提取所需要的部分，供外面使用。*
+    其实上dataSource 应该设计的重用性非常强，它的基础数据应该只有：
+    1.存储每个cell数据的数组（泛型）
+    2.如何配置cell的闭包或者block，由外部提供，它不关心内部细节，只负责调用
+    3.标示重用的字符串
 */
 
 import UIKit
 
-let cellHeight: CGFloat = 36
 let rowHeight: CGFloat = 44.0
 let cellGap:CGFloat = 4.0
 
 class MTipsDataSource: NSObject, UICollectionViewDataSource, TipsCVLayoutDataSource {
-    var dataCount: Int!
     var dataArray: NSMutableArray?
     var configureBlock: (cell: AnyObject, cellData: AnyObject) -> Void!
+    var tipCellIdentifier: NSString?
     
     var dataTitle: [NSString] = []//暂时性虚假数据，整整dataSource不关心真是数据，只要放在array就行
-    init(itemCount: Int, configureBlock: (cell: AnyObject, cellData: AnyObject) -> Void)
+    init(configureBlock: (cell: AnyObject, cellData: AnyObject) -> Void, cellIndetifier: NSString)
     {
-        self.dataCount = itemCount
         self.configureBlock = configureBlock
+        self.tipCellIdentifier = cellIndetifier
         
         //假数据
-        dataTitle = ["1", "22", "333", "4444", "55555","666666", "7777777", "8888888"];
+        dataTitle = ["1", "22", "333", "444"];
     }
     
     //创建数据的过程。
@@ -40,7 +43,7 @@ class MTipsDataSource: NSObject, UICollectionViewDataSource, TipsCVLayoutDataSou
             dataArray!.removeAllObjects()
         }
         dataArray = NSMutableArray()
-        for index in 0 ..< dataCount
+        for index in 0 ..< dataTitle.count
         {
             var lastTipData: MTipCellData?;
             if index > 0
@@ -64,19 +67,19 @@ class MTipsDataSource: NSObject, UICollectionViewDataSource, TipsCVLayoutDataSou
             {
                 if let temp = lastTipData?
                 {
-                    currentData.position = CGRectMake(lastCellMaxX + cellGap , lastTipData!.position.origin.y, currentCellWidth, cellHeight)
+                    currentData.position = CGRectMake(lastCellMaxX, lastTipData!.position.origin.y, currentCellWidth, currentData.height)
                 }
                 else{
-                    currentData.position = CGRectMake(lastCellMaxX + cellGap, cellGap, currentCellWidth, cellHeight)
+                    currentData.position = CGRectMake(lastCellMaxX, 0, currentCellWidth, currentData.height)
                 }
             }
             else{
                 if let temp = lastTipData?
                 {
-                    currentData.position = CGRectMake(cellGap, lastTipData!.position.origin.y + rowHeight, currentCellWidth, cellHeight)
+                    currentData.position = CGRectMake(0, lastTipData!.position.origin.y + rowHeight, currentCellWidth, currentData.height)
                 }
                 else{
-                    currentData.position = CGRectMake(cellGap, cellGap, currentCellWidth, cellHeight)
+                    currentData.position = CGRectMake(0, 0, currentCellWidth, currentData.height)
                 }
 
             }
@@ -105,7 +108,7 @@ class MTipsDataSource: NSObject, UICollectionViewDataSource, TipsCVLayoutDataSou
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-        var cell:MTipCell = collectionView.dequeueReusableCellWithReuseIdentifier(tipIdentifier, forIndexPath: indexPath) as MTipCell
+        var cell:UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(tipCellIdentifier!, forIndexPath: indexPath) as UICollectionViewCell
         self.configureBlock(cell: cell, cellData: getCellData(index: indexPath.item))
         return cell
     }

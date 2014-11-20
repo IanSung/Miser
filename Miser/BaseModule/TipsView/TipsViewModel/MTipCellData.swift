@@ -27,14 +27,20 @@ class MTipCellData: NSObject, CellLayoutDataProtocol {
     var title: String!
     
     var position: CGRect = CGRectZero
+    
+    var height: CGFloat{
+        return 44
+    }
 
     override init()
     {
         super.init()
     }
+    
     var frame: CGRect{
         return position
     }
+    
     var baseWidth: CGFloat{
         return 35.0
     }

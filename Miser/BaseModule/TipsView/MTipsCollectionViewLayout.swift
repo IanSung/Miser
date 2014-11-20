@@ -21,9 +21,11 @@ class MTipsCollectionViewLayout: UICollectionViewLayout {
         super.prepareLayout()
         cellCount = self.collectionView?.numberOfItemsInSection(0)
     }
+    
     override func collectionViewContentSize() -> CGSize {
         return self.collectionView!.frame.size
     }
+    
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [AnyObject]? {
         var attributes = NSMutableArray()
         for(var i = 0; i < cellCount; i++) {
@@ -32,6 +34,7 @@ class MTipsCollectionViewLayout: UICollectionViewLayout {
         }
         return attributes
     }
+
     override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes! {
         var attribute = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
         

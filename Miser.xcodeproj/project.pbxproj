@@ -26,7 +26,8 @@
 		D46A1F621A0F94AA00668008 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46A1F601A0F94AA00668008 /* LaunchScreen.xib */; };
 		D46A1F781A0F979300668008 /* LaunchForXib.png in Resources */ = {isa = PBXBuildFile; fileRef = D46A1F771A0F979300668008 /* LaunchForXib.png */; };
 		D46B75311A1749D3008AAD2D /* MButtonAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B752F1A1749D3008AAD2D /* MButtonAreaView.swift */; };
-		D46B75321A1749D3008AAD2D /* MButtonAreaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46B75301A1749D3008AAD2D /* MButtonAreaView.xib */; };
+		D4B4E70C1A1CE28A00695787 /* MButtonAreaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B4E70B1A1CE28A00695787 /* MButtonAreaView.xib */; };
+		D4B4E7101A1CE5F800695787 /* MTipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B4E70F1A1CE5F800695787 /* MTipCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +56,8 @@
 		D46A1F611A0F94AA00668008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D46A1F771A0F979300668008 /* LaunchForXib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchForXib.png; sourceTree = "<group>"; };
 		D46B752F1A1749D3008AAD2D /* MButtonAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MButtonAreaView.swift; sourceTree = "<group>"; };
-		D46B75301A1749D3008AAD2D /* MButtonAreaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MButtonAreaView.xib; sourceTree = "<group>"; };
+		D4B4E70B1A1CE28A00695787 /* MButtonAreaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MButtonAreaView.xib; sourceTree = "<group>"; };
+		D4B4E70F1A1CE5F800695787 /* MTipCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTipCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				D46B752F1A1749D3008AAD2D /* MButtonAreaView.swift */,
-				D46B75301A1749D3008AAD2D /* MButtonAreaView.xib */,
+				D4B4E70B1A1CE28A00695787 /* MButtonAreaView.xib */,
 			);
 			path = ButtonAreaView;
 			sourceTree = "<group>";
@@ -168,6 +170,7 @@
 				D45DCA811A18488B00637093 /* MTipsCollectionView.swift */,
 				D45DCA871A184B4B00637093 /* MTipsCollectionViewLayout.swift */,
 				D45DCA851A184B1500637093 /* MTipCell.swift */,
+				D4B4E70F1A1CE5F800695787 /* MTipCell.xib */,
 				D45DCA801A18482300637093 /* TipsViewModel */,
 			);
 			path = TipsView;
@@ -231,13 +234,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D46A1F781A0F979300668008 /* LaunchForXib.png in Resources */,
+				D4B4E70C1A1CE28A00695787 /* MButtonAreaView.xib in Resources */,
 				D423E09C1A162D530048F71F /* FontAwesome.ttf in Resources */,
 				D46A1F621A0F94AA00668008 /* LaunchScreen.xib in Resources */,
 				D46A1F5F1A0F94AA00668008 /* Images.xcassets in Resources */,
 				D46248081A1AEDDF00BF395D /* MiserLaunchImage-480h@2x.png in Resources */,
 				D423E06E1A15AEEB0048F71F /* Main.storyboard in Resources */,
 				D46248091A1AEDDF00BF395D /* MiserLaunchImage-568h@2x.png in Resources */,
-				D46B75321A1749D3008AAD2D /* MButtonAreaView.xib in Resources */,
+				D4B4E7101A1CE5F800695787 /* MTipCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
